@@ -19,7 +19,7 @@ jobs:
       - name: Push branches and tags to GitLab
         run: |
           git remote add gitlab \
-            https://${{ secrets.GITLAB_USERNAME }}:${{ secrets.GITLAB_TOKEN }}@codevault.cyntexa.com/samyakjain1/projectformgithubtogitlabfinal.git
+            https://${{ secrets.GITLAB_USERNAME }}:${{ secrets.GITLAB_TOKEN }}@codevault.cyntexa.com/samyakjain1/tryfinal.git
 
           # git push gitlab --mirror
           git push gitlab --all --force
