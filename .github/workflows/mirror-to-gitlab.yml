@@ -1,11 +1,7 @@
 name: Mirror main to GitLab
 
 on:
-  push:
-    branches:
-      - main
-    tags:
-      - '**'
+  workflow_dispatch:
 
 jobs:
   mirror:
@@ -17,10 +13,9 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Push main and tags to GitLab
+      - name: Push main branch to GitLab
         run: |
           git remote add gitlab \
             https://${{ secrets.GITLAB_USERNAME }}:${{ secrets.GITLAB_TOKEN }}@codevault.cyntexa.com/samyakjain1/tryfinal.git
 
           git push gitlab main:main --force
-          git push gitlab --tags --force
